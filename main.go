@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("Hello Kata Academy!")
+	fmt.Print("Hello Kata Academy!!!")
 }

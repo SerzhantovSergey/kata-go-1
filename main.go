@@ -3,5 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Print("Hello Kata Academy!!!")
+	fmt.Println("Hello Kata Academy!!!")
+	fmt.Println("some change")
 }

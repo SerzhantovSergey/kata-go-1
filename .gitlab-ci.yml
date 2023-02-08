@@ -42,8 +42,8 @@ compile:
   stage: build
   extends: .go-cache
   script:
-    -cd $CI_PROJECT_DIR/module1/ide/git && go build -race -ldflags "-extldflags '-static'"
-    -cd $CI_PROJECT_DIR/module1/ide/filewatcher && go build -race -ldflags "-extldflags '-static'"
+    - cd $CI_PROJECT_DIR/module1/ide/git && go build -race -ldflags "-extldflags '-static'"
+    - cd $CI_PROJECT_DIR/module1/ide/filewatcher && go build -race -ldflags "-extldflags '-static'"
   artifacts:
     paths:
       - app

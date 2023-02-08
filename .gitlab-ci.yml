@@ -3,7 +3,7 @@ image: golang:latest
 
 variables:
   # Please edit to your GitLab project
-  REPO_NAME: gitlab.com/serzhantovkata/go-kata/module1/filewatcher
+  REPO_NAME: gitlab.com/serzhantovkata/go-kata/module1/
   GIT_DEPTH: 10
 
 stages:
@@ -42,7 +42,8 @@ compile:
   stage: build
   extends: .go-cache
   script:
-    - go build -race -ldflags "-extldflags '-static'" -o $CI_PROJECT_DIR/app
+    -cd $CI_PROJECT_DIR/module1/ide/git && go build -race -ldflags "-extldflags '-static'"
+    -cd $CI_PROJECT_DIR/module1/ide/filewatcher && go build -race -ldflags "-extldflags '-static'"
   artifacts:
     paths:
       - app

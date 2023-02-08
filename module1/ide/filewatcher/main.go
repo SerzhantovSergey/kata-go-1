@@ -13,7 +13,6 @@ const (
 
 func printme(text string) {
 	fmt.Println(text)
-
 }
 
 func main() {

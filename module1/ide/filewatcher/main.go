@@ -13,11 +13,10 @@ const (
 
 func printme(text string) {
 	fmt.Println(text)
-
 }
 
 func main() {
-	printme("Hello linter")
+	printme("Hello li nter")
 	roll := rand.Intn(100)
 	if roll > 50 {
 		os.Exit(noError)

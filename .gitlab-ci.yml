@@ -1,9 +1,9 @@
 # This file is a template, and might need editing before it works on your project.
-image: golang:latest
+image: golang:1.19.1
 
 variables:
   # Please edit to your GitLab project
-  REPO_NAME: gitlab.com/ptflp/go-kata
+  REPO_NAME: gitlab.com/serzhantovkata/kata-go
   GIT_DEPTH: 10
 
 stages:
@@ -17,7 +17,7 @@ stages:
     - ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
     - cd $GOPATH/src/$REPO_NAME
     - go mod download -json
-    - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.49.0
+    - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.51.0
     - golangci-lint --version
   cache:
     key: "$CI_COMMIT_REF_SLUG"
@@ -42,7 +42,8 @@ compile:
   stage: build
   extends: .go-cache
   script:
-    - go build -race -ldflags "-extldflags '-static'" -o $CI_PROJECT_DIR/app
+    - cd $CI_PROJECT_DIR/module1/ide/git && go build -race -ldflags "-extldflags '-static'"
+    - cd $CI_PROJECT_DIR/module1/ide/filewatcher && go build -race -ldflags "-extldflags '-static'"
   artifacts:
     paths:
       - app

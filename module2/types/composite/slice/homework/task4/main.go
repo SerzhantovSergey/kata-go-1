@@ -31,7 +31,7 @@ func main() {
 		},
 	}
 	subUsers := make([]User, 3)
-	copy(subUsers, users[2:len(users)])
+	copy(subUsers, users[2:])
 	editSecondSlice(subUsers)
 
 	fmt.Println(subUsers)

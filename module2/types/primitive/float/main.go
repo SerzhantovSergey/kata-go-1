@@ -18,8 +18,7 @@ func typeFloat() {
 	uintNumber += 1 << 25
 	uintNumber += 1 << 21
 	uintNumber += 1 << 31
-	var floatNumber float32
-	floatNumber = *(*float32)(unsafe.Pointer(&uintNumber))
+	var floatNumber float32 = *(*float32)(unsafe.Pointer(&uintNumber))
 	fmt.Println(floatNumber)
 	fmt.Println("=== END type float ===")
 }

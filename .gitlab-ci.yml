@@ -20,7 +20,7 @@ stages:
     - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.51.0
     - golangci-lint --version
   cache:
-    key: "$CI_COMMIT_REF_SLUG"
+    key:  "$CI_COMMIT_REF_SLUG"
     paths:
       - $GOPATH
 

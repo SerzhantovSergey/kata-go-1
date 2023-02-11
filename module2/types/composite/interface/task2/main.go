@@ -20,8 +20,7 @@ type Userer interface {
 }
 
 func main() {
-	var u Userer
-	u = &User{
+	var u Userer = &User{
 		ID:   34,
 		Name: "Annet",
 	}

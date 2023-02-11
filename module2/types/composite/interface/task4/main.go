@@ -16,8 +16,7 @@ type Userer interface {
 }
 
 func main() {
-	var i Userer
-	i = &User{}
+	var i Userer = &User{}
 	_ = i
 	fmt.Println("Success!")
 }

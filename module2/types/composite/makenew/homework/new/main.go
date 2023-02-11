@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	var n *int
-	n = new(int)
+	var n *int = new(int)
 	fmt.Println(*n)
 }

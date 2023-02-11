@@ -11,7 +11,7 @@ func main() {
 	m := make(map[int64][]Product) // создаем мапу, чтобы не итерировать цикл в цикле
 	var i int
 
-	for i = range products {
+	for i = range products { //nolint
 		m[products[i].UserID] = append(m[products[i].UserID], products[i])
 	}
 

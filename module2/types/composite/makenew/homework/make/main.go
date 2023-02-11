@@ -10,7 +10,7 @@ func main() {
 	products := getProducts()      // достаем продукты пользователей
 	m := make(map[int64][]Product) // создаем мапу, чтобы не итерировать цикл в цикле
 	var i int
-	for i = range products { // проходимся по продуктам 1 раз
+	for i = range products {
 		m[products[i].UserID] = append(m[products[i].UserID], products[i]) // записываем продукты в map по UserID
 	}
 

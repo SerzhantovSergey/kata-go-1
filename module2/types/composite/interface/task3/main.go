@@ -18,7 +18,6 @@ type Userer interface {
 }
 
 func main() {
-	//var v []Userer
 
 	u := []User{
 		{
